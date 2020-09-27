@@ -4,7 +4,9 @@
   "description": "Yaute WebCamp",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass -w scss/ -o public/css/ --recursive",
+    "dev": "nodemon app.js"
   },
   "keywords": [
     "yaute",
@@ -12,5 +14,12 @@
     "yautepec"
   ],
   "author": "Luis Fuentes",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  }
 }
