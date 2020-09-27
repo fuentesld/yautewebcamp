@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const express = require('express')
 
 const dirRoot = require('./utils/path')
+
 const main = require('./routes/main')
 const conferencia = require('./routes/conferencia')
 const registro = require('./routes/registro')
