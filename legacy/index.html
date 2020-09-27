@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/bfa70bea27.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Oswald:wght@300;400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Document</title>
+</head>
+<body>
+  <header class="site-header">
+    <div class="hero">
+      <div class="contenido-header">
+        <nav class="redes-sociales">
+          <a href="#"><i class="fab fa-facebook-f"></i> </a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-pinterest-p"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </nav>
+        <div class="informacion-evento">
+          <p class="fecha"><i class="fas fa-calendar-alt"></i> 10 - 12 Dic</p>
+          <p class="ciudad"><i class="fas fa-map-marker-alt"></i> Yautepec, Mx</p>
+        </div>
+        <h1 class="nombre-sitio">Yaute WebCamp</h1>
+        <p class="slogan">La mejor conferencia de <span>diseño web</span></p>
+      </div>
+    </div>
+  </header>
+
+  <div class="barra" id="header">
+    <div class="contenedor">
+      <div class="barra-contenido">
+        <div class="logo">
+          <img src="img/logo.svg" alt="Logo">
+        </div>
+  
+        <div class="menu-movil">
+          <i class="fas fa-ellipsis-v fa-3x"></i>
+          <!-- <span></span>
+          <span></span>
+          <span></span> -->
+        </div>
+        
+        <nav class="navegacion-principal ocultar">
+          <a href="conferencia.html">Conferencia</a>
+          <a href="#">Calendario</a>
+          <a href="#">Invitados</a>
+          <a href="registro.html">Reservaciones</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <section class="seccion contenedor">
+    <h2>La mejor Conferencia de diseño en español</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae sapiente blanditiis nulla laudantium a odit earum sit alias ab ut nemo soluta, doloremque magnam amet atque. Impedit doloribus dolore commodi, eum ipsam porro veniam. Laboriosam repellendus ea tenetur debitis aperiam expedita quae provident non, nostrum consectetur a illum quas, voluptates perspiciatis numquam ut officia nam nesciunt vitae odit tempora! Dolores.</p>
+  </section>
+
+  <section class="programa">
+    <div class="contenedor-video">
+      <video autoplay loop poster="img/bg-talleres.jpg">
+        <source src="video/video.mp4" type="video/mp4">
+        <source src="video/video.webm" type="video/webm">
+        <source src="video/video.ogg" type="video/ogg">
+      </video>
+    </div>
+
+    <div class="contenido-programa">
+      <div class="contenedor">
+        <div class="programa-evento">
+          <h2>Programa del Evento</h2>
+          <nav class="menu-programa">
+            <a href="#talleres"><i class="fa fa-code"></i> Talleres</a>
+            <a href="#conferencias"><i class="fa fa-comment"></i> Conferencias</a>
+            <a href="#seminarios"><i class="fa fa-university"></i> Seminarios</a>
+          </nav>
+
+          <div id="talleres" class="info-curso">
+            <div class="detalle-evento">
+              <h3>HTML5, CSS3, JavaScript</h3>
+              <p><i class="far fa-clock"></i> 16:00</p>
+              <p><i class="fa fa-calendar"></i> 10 Dic</p>
+              <p><i class="fa fa-user"></i> Luis Fuentes</p>
+            </div>
+            <div class="detalle-evento">
+              <h3>Responsive Web Design</h3>
+              <p><i class="far fa-clock"></i> 20:00</p>
+              <p><i class="fa fa-calendar"></i> 10 Dic</p>
+              <p><i class="fa fa-user"></i> Luis Fuentes</p>
+            </div>
+            <a href="#" class="btn btn-primario">Ver todos</a>
+          </div>
+
+          <div id="conferencias" class="info-curso ocultar">
+            <div class="detalle-evento">
+              <h3>Como ser freelancer</h3>
+              <p><i class="far fa-clock"></i> 10:00</p>
+              <p><i class="fa fa-calendar"></i> 10 Dic</p>
+              <p><i class="fa fa-user"></i> Donna Fuentes</p>
+            </div>
+            <div class="detalle-evento">
+              <h3>Tecnologias del futuro</h3>
+              <p><i class="far fa-clock"></i> 17:00</p>
+              <p><i class="fa fa-calendar"></i> 10 Dic</p>
+              <p><i class="fa fa-user"></i> Wiggo Solis</p>
+            </div>
+            <a href="#" class="btn btn-primario">Ver todos</a>
+          </div>
+
+          <div id="seminarios" class="info-curso ocultar">
+            <div class="detalle-evento">
+              <h3>Diseño UI/UX para móviles</h3>
+              <p><i class="far fa-clock"></i> 17:00</p>
+              <p><i class="fa fa-calendar"></i> 11 Dic</p>
+              <p><i class="fa fa-user"></i> Alba Solis</p>
+            </div>
+            <div class="detalle-evento">
+              <h3>Aprende a programar en una mañana</h3>
+              <p><i class="far fa-clock"></i> 10:00</p>
+              <p><i class="fa fa-calendar"></i> 11 Dic</p>
+              <p><i class="fa fa-user"></i> Musa Mendoza</p>
+            </div>
+            <a href="#" class="btn btn-primario">Ver todos</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="invitados contenedor seccion">
+    <h2>Invitados</h2>
+    <ul class="lista-invitados">
+      <li class="invitado">
+        <img src="img/invitados/invitado1.jpg" alt="invitado">
+        <p>Rafael Bautista</p>
+      </li>
+      <li class="invitado">
+        <img src="img/invitados/invitado2.jpg" alt="invitado">
+        <p>Sally Herrera</p>
+      </li>
+      <li class="invitado">
+        <img src="img/invitados/invitado3.jpg" alt="invitado">
+        <p>Gregorio Sanchez</p>
+      </li>
+      <li class="invitado">
+        <img src="img/invitados/invitado4.jpg" alt="invitado">
+        <p>Alba Solis</p>
+      </li>
+      <li class="invitado">
+        <img src="img/invitados/invitado5.jpg" alt="invitado">
+        <p>Juan Hernández</p>
+      </li>
+      <li class="invitado">
+        <img src="img/invitados/invitado6.jpg" alt="invitado">
+        <p>Fer Fuentes</p>
+      </li>
+    </ul>
+  </section>
+
+  <div class="contador" id="bg-img">
+    <div class="contenedor">
+      <ul class="resumen-evento">
+        <li class="numero" data-target= "6">
+          <div class="numeralia" data-target= "6">0</div>
+          <p>Invitados</p>
+        </li>
+        <li class="numero" data-target= "15">
+          <div class="numeralia" data-target= "15">0</div>
+          <p>Talleres</p>
+        </li>
+        <li class="numero" data-target= "3">
+          <div class="numeralia" data-target= "3">0</div>
+          <p>Dias</p>
+        </li>
+        <li class="numero" data-target= "9">
+          <div class="numeralia" data-target= "9">0</div>
+          <p>Conferencias</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="precios seccion">
+    <h2>Precios</h2>
+    <div class="contenedor">
+      <ul class="lista-precios">
+        <li>
+          <div class="tabla-precio">
+            <h3>Pase por dia</h3>
+            <p class="numero">$30</p>
+            <ul>
+              <li><i class="fas fa-check"></i> Bocadillo Gratis</li>
+              <li><i class="fas fa-check"></i> Todas las conferencias</li>
+              <li><i class="fas fa-check"></i> Todos los talleres</li>
+              <a href="#" class="btn btn-primario hollow">comprar</a>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="tabla-precio">
+            <h3>Todos dia</h3>
+            <p class="numero">$50</p>
+            <ul>
+              <li><i class="fas fa-check"></i> Bocadillo Gratis</li>
+              <li><i class="fas fa-check"></i> Todas las conferencias</li>
+              <li><i class="fas fa-check"></i> Todos los talleres</li>
+              <a href="#" class="btn btn-primario">comprar</a>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="tabla-precio">
+            <h3>Pase por 2 dias</h3>
+            <p class="numero">$45</p>
+            <ul>
+              <li><i class="fas fa-check"></i> Bocadillo Gratis</li>
+              <li><i class="fas fa-check"></i> Todas las conferencias</li>
+              <li><i class="fas fa-check"></i> Todos los talleres</li>
+              <a href="#" class="btn btn-primario hollow">comprar</a>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <div id="mapa" class="mapa">
+
+  </div>
+
+  <section class="seccion">
+    <h2>
+      Testimoniales
+    </h2>
+    <div class="testimoniales contenedor">
+      <div class="testimonial">
+        <blockquote>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt explicabo veniam aspernatur? Nihil magnam, delectus nam, at voluptatem perspiciatis esse consequatur error rerum, accusamus incidunt. Eveniet ullam numquam perferendis vel. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, voluptatum.</p>
+          <footer class="info-testimonial">
+            <div>
+              <img src="img/testimonial.jpg" alt="imagen testimonial">
+            </div>
+            <cite>Alba Solis Mendoza<span>Diseñador en @yautics</span></cite>
+          </footer>
+        </blockquote>
+      </div>
+      <div class="testimonial">
+        <blockquote>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt explicabo veniam aspernatur? Nihil magnam, delectus nam, at voluptatem perspiciatis esse consequatur error rerum, accusamus incidunt. Eveniet ullam numquam perferendis vel. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, voluptatum.</p>
+          <footer class="info-testimonial">
+            <div>
+              <img src="img/testimonial.jpg" alt="imagen testimonial">
+            </div>
+            <cite>David Fuentes Velazquez<span>Diseñador en @yautics</span></cite>
+          </footer>
+        </blockquote>
+      </div>
+      <div class="testimonial">
+        <blockquote>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt explicabo veniam aspernatur? Nihil magnam, delectus nam, at voluptatem perspiciatis esse consequatur error rerum, accusamus incidunt. Eveniet ullam numquam perferendis vel. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, voluptatum.</p>
+          <footer class="info-testimonial">
+            <div>
+              <img src="img/testimonial.jpg" alt="imagen testimonial">
+            </div>
+            <cite>Donna sansores<span>Diseñador en @yautics</span></cite>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- * NEWSLETTER -->
+  <div class="newsletter" id="newsletter">
+    <div class="contenido contenedor">
+      <p>Registrate al Newsletter</p>
+      <h3>Yaute WebCamp</h3>
+      <a href="#" class="btn btn-primario transparente">Registrate</a>
+    </div>
+  </div>
+  
+  <!-- * Cuenta Regresiva -->
+
+  <section class="section">
+    <h2>Faltan</h2>
+    <!-- <p id="demo"></p> -->
+    <div class="cuenta-regresiva contenedor">
+      <ul>
+        <li>
+          <p class="numero"></p> Dias
+        </li>
+        <li>
+          <p class="numero"></p> Horas
+        </li>
+        <li>
+          <p class="numero"></p> Minutos
+        </li>
+        <li>
+          <p class="numero"></p> Segundos
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!--  * FOOTER -->
+  <footer class="site-footer">
+    <div class="contenido contenedor">
+      <div class="footer-informacion">
+        <h3>Sobre <span>Yaute WebCamp</span></h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi odit animi dicta ducimus sed recusandae in accusantium nesciunt adipisci! Doloremque dolorum repudiandae inventore suscipit quaerat, natus, a distinctio consequuntur atque neque porro facilis maxime magni quibusdam harum officia? Dolor, repellat.</p>
+      </div>  
+      <div class="ultimos-tweets">
+        <h3>Últimos <span>tweets</span></h3>
+        <ul>
+          <li> 
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam accusantium mollitia doloremque in vel consequuntur error dolorem deserunt, soluta sed.
+          </li>
+          <li> 
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam accusantium mollitia doloremque in vel consequuntur error dolorem deserunt, soluta sed.
+          </li>
+          <li> 
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam accusantium mollitia doloremque in vel consequuntur error dolorem deserunt, soluta sed.
+          </li>
+        </ul>
+      </div>
+      <div class="menu">
+        <h3>Redes <span>Sociales</span></h3>
+        <nav class="redes-sociales">
+          <a href="#"><i class="fab fa-facebook-f"></i> </a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-pinterest-p"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </nav>
+      </div>
+    </div>
+    <p class="copyright">Todos los derechos reservados YAUTE WEBCAMP 2020.</p>
+  </footer>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+  <script src="js/stickyheader.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
