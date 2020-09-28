@@ -1,12 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
-const path = require('path')
-const dirRoot = require('../utils/path')
+const main = require('../controllers/main')
 
-router.get('/', (req,res)=>{
-  // res.sendFile(path.join(dirRoot, 'views', 'index.html'))
-  res.render('index', {pageTitle: 'YateWebCamp'})
-})
+router.get('/', main.getMainPage)
 
 module.exports = router

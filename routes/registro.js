@@ -1,12 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
-const path = require('path')
-const dirRoot = require('../utils/path')
+const registro = require('../controllers/registro')
 
-router.get('/', (req,res)=>{
-  // res.sendFile(path.join(dirRoot, 'views', 'index.html'))
-  res.render('registro', {pageTitle: 'Registro'})
-})
+router.get('/', registro.getRegistroPage)
 
 module.exports = router
