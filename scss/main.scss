@@ -867,3 +867,55 @@
   }
 }
 
+.calendario{
+  h3{
+    text-align: center;
+    margin-top: 1rem;
+    color: white;
+    background-color: $primary-color;
+    padding: 1rem 0;
+  }
+  .eventos{
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .dia{
+      p{
+        text-align: left;
+        &.titulo{
+          text-align: center;
+          font-weight: bold;
+          color: $primary-color;
+        }
+      }
+      flex: 0 0 50%;
+      border: 2px solid #e1e1e1;
+      padding: .5rem;
+      @include easeOut;
+      &:hover{
+        background-color: #e1e1e1;
+        -webkit-transform: scale(1.1);
+      }
+      i{
+        color: $primary-color
+      }
+    }
+  }
+}
+@media (min-width: 768px ) {
+  .calendario{
+    .eventos{
+      .dia{
+        flex: 0 0 33.3%;
+        p{
+          &.titulo{
+            text-transform: uppercase;
+            
+          }
+        }
+      }
+    }
+
+  }
+}
+

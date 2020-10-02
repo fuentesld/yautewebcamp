@@ -774,3 +774,37 @@ p {
     width: 100%;
     display: flex;
     justify-content: center; } }
+
+.calendario h3 {
+  text-align: center;
+  margin-top: 1rem;
+  color: white;
+  background-color: #d72506;
+  padding: 1rem 0; }
+
+.calendario .eventos {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; }
+  .calendario .eventos .dia {
+    flex: 0 0 50%;
+    border: 2px solid #e1e1e1;
+    padding: .5rem;
+    transition: all 0.5s ease-out; }
+    .calendario .eventos .dia p {
+      text-align: left; }
+      .calendario .eventos .dia p.titulo {
+        text-align: center;
+        font-weight: bold;
+        color: #d72506; }
+    .calendario .eventos .dia:hover {
+      background-color: #e1e1e1;
+      -webkit-transform: scale(1.1); }
+    .calendario .eventos .dia i {
+      color: #d72506; }
+
+@media (min-width: 768px) {
+  .calendario .eventos .dia {
+    flex: 0 0 33.3%; }
+    .calendario .eventos .dia p.titulo {
+      text-transform: uppercase; } }

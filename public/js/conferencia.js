@@ -1,1 +1,0 @@
-const tobii = new Tobii()
