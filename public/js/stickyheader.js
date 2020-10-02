@@ -8,7 +8,6 @@
 
     const botonMenuMovil = document.querySelector('.menu-movil')
     const menuMovil = document.querySelector('.navegacion-principal')
-    console.log(menuMovil)
     botonMenuMovil.addEventListener('click', (e)=>{
       e.preventDefault()
       console.log('click')

@@ -1,3 +1,4 @@
+const db = require('../utils/database')
 
 module.exports = class Invitado {
   constructor(id, nombre, apellido, descripcion, urlImagen) {
@@ -13,6 +14,12 @@ module.exports = class Invitado {
   }
 
   static getAllInvitados() {
+    try {
+      return db.execute('SELECT * FROM invitados')
+    } catch (error) {
+      console.log('ERROR en MODELO INVITADOS')
+      console.log(error)
+    }
 
   }
 }
