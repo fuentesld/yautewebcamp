@@ -22,6 +22,7 @@
 // )
 
 // module.exports = CatEvento
+const db = require('../utils/database')
 
 module.exports = class catEvento {
   constructor(id, descripcion, icono) { 
@@ -32,5 +33,14 @@ module.exports = class catEvento {
 
   save() {
     
+  }
+
+  static getAllCatEventos(){
+    try {
+      return db.execute('SELECT * FROM cat_eventos order BY id')
+    } catch (error) {
+      console.log('ERROR en MODELO INVITADOS')
+      console.log(error)
+    }
   }
 }

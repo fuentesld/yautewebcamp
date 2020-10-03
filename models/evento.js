@@ -24,4 +24,13 @@ module.exports = class Evento {
       console.log(error)
     }
   }
+  
+  static getEventosPorCategoria(categoria, limite = 0){
+    const query = 'SELECT fecha, hora, eventos.nombre, cat_eventos.descripcion, icono, CONCAT(invitados.nombre , " " , invitados.apellido) AS invitado FROM yautewebcamp.eventos INNER JOIN cat_eventos ON catEventoId = cat_eventos.id INNER JOIN invitados ON (invitadoId = invitados.id) WHERE cat_eventos.id = ? LIMIT ?'
+    try {
+      return db.execute(query,[categoria, limite])
+    } catch (error) {
+      console.log(error)
+    }
+  }
 }

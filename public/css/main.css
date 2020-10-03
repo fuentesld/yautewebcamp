@@ -233,6 +233,10 @@ p {
           transition: all 0.5s ease-out; }
         .barra .barra-contenido .navegacion-principal a.actual {
           background-color: #d72506; }
+        .barra .barra-contenido .navegacion-principal a.activo {
+          padding-bottom: 0;
+          border: none;
+          border-bottom: 1rem solid #d72506; }
 
 @media (min-width: 768px) {
   .barra .barra-contenido {

@@ -15,10 +15,10 @@
       </div>
       
       <nav class="navegacion-principal ocultar">
-        <a href="/conferencias">Conferencias</a>
-        <a href="/calendario">Calendario</a>
-        <a href="/invitados">Invitados</a>
-        <a href="/registro">Reservaciones</a>
+        <a class= "<%= pageTitle === 'Conferencias'?'activo':''%>" href="/conferencias">Conferencias</a>
+        <a class= "<%= pageTitle === 'Calendario'?'activo':''%>" href="/calendario">Calendario</a>
+        <a class= "<%= pageTitle === 'Invitados'?'activo':''%>" href="/invitados">Invitados</a>
+        <a class= "<%= pageTitle === 'Reservaciones'?'activo':''%>" href="/registro">Reservaciones</a>
       </nav>
     </div>
   </div>

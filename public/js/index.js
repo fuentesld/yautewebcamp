@@ -16,6 +16,7 @@
   })
 
   // * MENU PROGRAMA
+
   const menuPrograma = document.querySelectorAll('.menu-programa a')
   const talleres = document.querySelector('#talleres')
   const conferencias = document.querySelector('#conferencias')
@@ -27,7 +28,7 @@
   }))
 
   function menuProgramaActual(menu){
-    // console.log('click')
+    console.log('click ->', menu)
     talleres.classList.add('ocultar')
     conferencias.classList.add('ocultar')
     seminarios.classList.add('ocultar')
@@ -41,13 +42,13 @@
       // talleres.classList.remove('hide')
       // conferencias.classList.add('hide')
       // conferencias.classList.remove('show')
-      talleres.classList.toggle('ocultar')
+      seminarios.classList.toggle('ocultar')
     }
     if (menu === 1) {
       conferencias.classList.toggle('ocultar')
     }
     if (menu === 2) {
-      seminarios.classList.toggle('ocultar')
+      talleres.classList.toggle('ocultar')
     }
   }
 

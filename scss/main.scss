@@ -100,8 +100,7 @@
       flex-direction: column;
       &.ocultar{
         display: none;
-      }
-      
+      }     
       a{
         font-family: 'Oswald', sans-serif;
         color: set-text-color($barra-color);
@@ -123,6 +122,11 @@
         }
         &.actual{
           background-color: $primary-color;
+        }
+        &.activo{
+          padding-bottom: 0;
+          border:none;
+          border-bottom: 1rem solid $primary-color;
         }
       }
     }

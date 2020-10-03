@@ -12,11 +12,28 @@
       <div class="programa-evento">
         <h2>Programa del Evento</h2>
         <nav class="menu-programa">
-          <a href="#talleres"><i class="fa fa-code"></i> Talleres</a>
-          <a href="#conferencias"><i class="fa fa-comment"></i> Conferencias</a>
-          <a href="#seminarios"><i class="fa fa-university"></i> Seminarios</a>
+          <% catEventos.forEach(evento =>{%>
+            <a href="#<%= evento.descripcion.toLowerCase() %>"><i class="<%= evento.icono %>"></i> <%= evento.descripcion %></a>
+          <% }) %>
         </nav>
 
+        <% catEventos.forEach(evento=> { %>
+          <div id="<%= evento.descripcion.toLowerCase() %>" class="info-curso"> 
+            <% let eventosTemp = eventosDeCategorias.filter(evento1 => evento1.descripcion === evento.descripcion ) 
+            eventosTemp.forEach(element => { %>
+              
+              <div class="detalle-evento">
+                <h3><%= element.nombre %></h3>
+                <p><i class="far fa-clock"></i> <%= element.horaString %></p>
+                <p><i class="fa fa-calendar"></i> <%= element.fechaString %></p>
+                <p><i class="fa fa-user"></i> <%= element.invitado %></p>
+              </div>
+              <% } )%>
+              <a href="/calendario" class="btn btn-primario">Ver todos</a>
+          </div>
+        <% } )%>
+
+        <!--
         <div id="talleres" class="info-curso">
           <div class="detalle-evento">
             <h3>HTML5, CSS3, JavaScript</h3>
@@ -30,10 +47,10 @@
             <p><i class="fa fa-calendar"></i> 10 Dic</p>
             <p><i class="fa fa-user"></i> Luis Fuentes</p>
           </div>
-          <a href="#" class="btn btn-primario">Ver todos</a>
-        </div>
+          <a href="/calendario" class="btn btn-primario">Ver todos</a>
+        </div> -->
 
-        <div id="conferencias" class="info-curso ocultar">
+        <!-- <div id="conferencias" class="info-curso ocultar">
           <div class="detalle-evento">
             <h3>Como ser freelancer</h3>
             <p><i class="far fa-clock"></i> 10:00</p>
@@ -46,10 +63,10 @@
             <p><i class="fa fa-calendar"></i> 10 Dic</p>
             <p><i class="fa fa-user"></i> Wiggo Solis</p>
           </div>
-          <a href="#" class="btn btn-primario">Ver todos</a>
-        </div>
+          <a href="/calendario" class="btn btn-primario">Ver todos</a>
+        </div> -->
 
-        <div id="seminarios" class="info-curso ocultar">
+        <!-- <div id="seminarios" class="info-curso ocultar">
           <div class="detalle-evento">
             <h3>Diseño UI/UX para móviles</h3>
             <p><i class="far fa-clock"></i> 17:00</p>
@@ -62,8 +79,8 @@
             <p><i class="fa fa-calendar"></i> 11 Dic</p>
             <p><i class="fa fa-user"></i> Musa Mendoza</p>
           </div>
-          <a href="#" class="btn btn-primario">Ver todos</a>
-        </div>
+          <a href="/calendario" class="btn btn-primario">Ver todos</a>
+        </div> -->
       </div>
     </div>
   </div>
