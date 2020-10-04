@@ -1,27 +1,3 @@
-// const Sequelize = require('sequelize')
-// const sequelize = require('../utils/database')
-
-// const CatEvento = sequelize.define('cat_eventos', 
-//   {
-//     id: {
-//       type: Sequelize.INTEGER,
-//       autoIncrement: true,
-//       allowNull: false,
-//       primaryKey: true,
-//     },
-//     descripcion:{
-//       type: Sequelize.STRING,
-//       allowNull: false,
-//     },
-//     icono:{
-//       type:Sequelize.STRING,
-//       allowNull: false,
-//     }
-//   },
-//   {tableName: 'cat_eventos'}
-// )
-
-// module.exports = CatEvento
 const db = require('../utils/database')
 
 module.exports = class catEvento {
@@ -37,7 +13,7 @@ module.exports = class catEvento {
 
   static getAllCatEventos(){
     try {
-      return db.execute('SELECT * FROM cat_eventos order BY id')
+      return db.execute('SELECT * FROM cat_eventos order BY id_catevento')
     } catch (error) {
       console.log('ERROR en MODELO INVITADOS')
       console.log(error)

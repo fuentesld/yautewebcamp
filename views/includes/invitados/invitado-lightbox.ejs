@@ -3,15 +3,15 @@
 
   <% invitados.forEach(invitado => { %>
     
-    <div id="invitado<%= invitado.id %>" class="invitado-modal">
+    <div id="invitado<%= invitado.id_invitado %>" class="invitado-modal">
       <div class="invitado-info">
 
-        <h2><%= invitado.nombre %> <%= invitado.apellido %></h2>
+        <h2><%= invitado.nombre_invitado %> <%= invitado.apellido_invitado %></h2>
         <div>
-          <img src="img/invitados/<%= invitado.urlImagen %>" alt="invitado" >
+          <img src="img/invitados/<%= invitado.urlimagen_invitado %>" alt="invitado" >
         </div>
 
-        <p ><%= invitado.descripcion %></p>
+        <p ><%= invitado.descripcion_invitado %></p>
 
       </div>
     </div>
@@ -22,9 +22,9 @@
     <% invitados.forEach(invitado => {%>
 
       <li class="invitado">
-        <a href="#invitado<%= invitado.id %>"  class="lightbox" data-type="html" data-group="invitados">
-          <img src="img/invitados/<%= invitado.urlImagen %>" alt="invitado">
-          <p><%= invitado.nombre %> <%= invitado.apellido %></p>
+        <a href="#invitado<%= invitado.id_invitado %>"  class="lightbox" data-type="html" data-group="invitados">
+          <img src="img/invitados/<%= invitado.urlimagen_invitado %>" alt="invitado">
+          <p><%= invitado.nombre_invitado %> <%= invitado.apellido_invitado %></p>
         </a>
       </li>
 

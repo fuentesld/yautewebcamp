@@ -11,5 +11,7 @@ router.get('/conferencias', mainController.getConferenciasPage)
 router.get('/calendario', calendarioController.getCalendarioPage)
 router.get('/invitados', invitadosController.getInvitadosPage)
 router.get('/registro', registroController.getRegistroPage)
+router.post('/validar_registro', registroController.validarRegistro)
+
 
 module.exports = router

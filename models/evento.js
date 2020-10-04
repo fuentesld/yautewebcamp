@@ -17,7 +17,7 @@ module.exports = class Evento {
   }
 
   static getEventosParaCalendario(){
-    const query = 'SELECT fecha, hora, eventos.nombre, cat_eventos.descripcion, icono, CONCAT(invitados.nombre , " " , invitados.apellido) AS invitado FROM yautewebcamp.eventos INNER JOIN cat_eventos ON catEventoId = cat_eventos.id INNER JOIN invitados ON invitadoId = invitados.id ORDER BY fecha, catEventoId, hora'
+    const query = 'SELECT fecha_evento, hora_evento, nombre_evento, descripcion_catevento, icono_catevento, CONCAT(nombre_invitado , " " , apellido_invitado) AS invitado FROM eventos INNER JOIN cat_eventos ON catevento_id = id_catevento INNER JOIN invitados ON invitado_id = id_invitado ORDER BY fecha_evento, catevento_id, hora_evento'
     try {
       return db.execute(query)
     } catch (error) {
@@ -26,7 +26,7 @@ module.exports = class Evento {
   }
   
   static getEventosPorCategoria(categoria, limite = 0){
-    const query = 'SELECT fecha, hora, eventos.nombre, cat_eventos.descripcion, icono, CONCAT(invitados.nombre , " " , invitados.apellido) AS invitado FROM yautewebcamp.eventos INNER JOIN cat_eventos ON catEventoId = cat_eventos.id INNER JOIN invitados ON (invitadoId = invitados.id) WHERE cat_eventos.id = ? LIMIT ?'
+    const query = 'SELECT fecha_evento, hora_evento, nombre_evento, descripcion_catevento, icono_catevento, CONCAT(nombre_invitado , " " , apellido_invitado) AS invitado FROM eventos INNER JOIN cat_eventos ON catevento_id = id_catevento INNER JOIN invitados ON (invitado_id = id_invitado) WHERE id_catevento = ? LIMIT ?'
     try {
       return db.execute(query,[categoria, limite])
     } catch (error) {

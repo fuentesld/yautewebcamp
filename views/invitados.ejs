@@ -5,41 +5,7 @@
 
   <%- include('./includes/navegacion.ejs') %>
   
-  <%- include('./includes/invitados/invitado-lightbox.ejs', {invitados}) %>
-  <!-- <section class="invitados section contenedor">
-    <h2>Nuestros Invitados</h2>
-
-    <% invitados.forEach(invitado => { %>
-
-      <div id="invitado<%= invitado.id %>" class="invitado-modal">
-        <div class="invitado-info">
-
-          <h2><%= invitado.nombre %> <%= invitado.apellido %></h2>
-          <div>
-            <img src="img/invitados/<%= invitado.urlImagen %>" alt="invitado" >
-          </div>
-
-          <p ><%= invitado.descripcion %></p>
-
-        </div>
-      </div>
-
-    <% }) %>
-
-    <ul class="lista-invitados">
-      <% invitados.forEach(invitado => {%>
-
-        <li class="invitado">
-          <a href="#invitado<%= invitado.id %>"  class="lightbox" data-type="html" data-group="invitados">
-            <img src="img/invitados/<%= invitado.urlImagen %>" alt="invitado">
-            <p><%= invitado.nombre %> <%= invitado.apellido %></p>
-          </a>
-        </li>
-  
-      <% }) %>
-    </ul>
-
-  </section> -->
+  <%- include('./includes/invitados/invitado-lightbox.ejs') %>
   
   <%- include('./includes/footer.ejs') %>
 

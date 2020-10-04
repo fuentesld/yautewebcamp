@@ -21,14 +21,14 @@
   const talleres = document.querySelector('#talleres')
   const conferencias = document.querySelector('#conferencias')
   const seminarios = document.querySelector('#seminarios')
-  // menuProgramaActual(0)
+  menuProgramaActual(0)
   menuPrograma.forEach((programa,index) => programa.addEventListener('click', (e)=> {
     e.preventDefault()
     menuProgramaActual(index)
   }))
 
   function menuProgramaActual(menu){
-    console.log('click ->', menu)
+    // console.log('click ->', menu)
     talleres.classList.add('ocultar')
     conferencias.classList.add('ocultar')
     seminarios.classList.add('ocultar')

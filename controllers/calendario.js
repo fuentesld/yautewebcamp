@@ -10,8 +10,8 @@ exports.getCalendarioPage = async(req,res)=>{
     const eventosArray = rows.map((element) => {
       return {
         ...element, 
-        fechaString: moment(element.fecha).add(4, 'years').format("dddd, Do MMMM YYYY"), 
-        horaString: moment(element.hora,'HH:mm:ss').format('h:mm a')
+        fechaString: moment(element.fecha_evento).add(4, 'years').format("dddd, Do MMMM YYYY"), 
+        horaString: moment(element.hora_evento,'HH:mm:ss').format('h:mm a')
       }
     });
 

@@ -24,6 +24,8 @@
     let camisas = document.querySelector('#camisa-evento')
     let etiquetas = document.querySelector('#etiquetas')
 
+    registro.disabled = true
+
     const calcularMontos = (e)=>{
       e.preventDefault()
       if (regalo.value === ''){
@@ -50,13 +52,13 @@
         console.log(`Total pagar -> ${totalPagar}`)
         let regaloStr
         switch (regalo.value) {
-          case 'PUL': 
+          case '0': 
             regaloStr = 'Pulsera de regalo'
             break;
-          case 'ETI': 
+          case '1': 
             regaloStr = 'Etiquetas de regalo'
             break;
-          case 'PLU': 
+          case '2': 
             regaloStr = 'Plumas de regalo'
             break;
           default:
@@ -89,6 +91,8 @@
           listaProductosHTML.innerHTML =  listaProductosHTML.innerHTML + `${producto} <br>`
         });
         sumaTotal.innerHTML = `$ ${totalPagar.toFixed(2)}`
+        registro.disabled = false
+        document.querySelector('#total-pedido').value = totalPagar.toFixed(2)
       }
     }
 

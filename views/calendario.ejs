@@ -21,12 +21,12 @@
       <div class="eventos">
         <% actividades.forEach(actividad => { %>
           <div class="dia">
-            <p class="titulo"><%= actividad.nombre %></p>
+            <p class="titulo"><%= actividad.nombre_evento %></p>
             <p class="hora">
               <i class="fa fa-clock"></i> <%= actividad.horaString  %>
             </p>
             <p>
-              <i class="<%= actividad.icono %>"></i> <%= actividad.descripcion  %>
+              <i class="<%= actividad.icono_catevento %>"></i> <%= actividad.descripcion_catevento  %>
             </p>
             <p>
               <i class="fa fa-user"></i> <%= actividad.invitado  %>
