@@ -12,17 +12,26 @@ exports.getMainPage = async(req,res)=>{
     // Leemos invitados del evento
     const resInvitados = await Invitados.getAllInvitados()
     const invitados = resInvitados.rows
-    console.log(invitados)
 
     // leemos las categorias de eventos
     const resCatEventos = await CatEvento.getAllCatEventos()
     const catEventos = resCatEventos.rows
+
     // console.log(catEventos)
     // leemos dos eventos por cada categoria
-    // for (const categoria of catEventos){
-      
-    //   const [rows] = await Evento.getEventosPorCategoria(categoria.id_catevento, 2)
-    //   // añadimos campos fechaString y horaString a las categorias
+    for (const categoria of catEventos){
+      // leo eventos de una categoria en paso1
+      const resRows = await Evento.getEventosPorCategoria(categoria.catevento_id, 2)
+      const paso1 = resRows.rows
+      // añado fecha y hora formateada
+      paso2 = paso1.map(element =>{
+        const element2 = {...element, fechaString: moment(element.fecha).add(4, 'years').format("dddd, Do MMMM YYYY"), horaString: moment(element.hora,'HH:mm:ss').format('h:mm a') }
+        return element2
+      })
+      // Anadimos eventos de la categoria a arreglo para depliegue
+      eventosDeCategorias = [...eventosDeCategorias, ...paso2]
+    // añadimos campos fechaString y horaString a las categorias
+
     //   eventosDeCategorias =  [
     //     ...eventosDeCategorias, 
     //     ...rows.map(
@@ -33,8 +42,9 @@ exports.getMainPage = async(req,res)=>{
     //       })
     //     )
     //   ]
-    // }
-
+    }
+    // console.log(eventosDeCategorias)
+// return
     res.render('index', {pageTitle: 'YateWebCamp', invitados, catEventos, eventosDeCategorias})
   } catch (error) {
     

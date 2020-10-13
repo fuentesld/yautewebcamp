@@ -13,17 +13,17 @@
         <h2>Programa del Evento</h2>
         <nav class="menu-programa">
           <% catEventos.forEach(evento =>{%>
-            <a href="#<%= evento.descripcion_catevento.toLowerCase() %>"><i class="<%= evento.icono_catevento %>"></i> <%= evento.descripcion_catevento %></a>
+            <a href="#<%= evento.descripcion.toLowerCase() %>"><i class="<%= evento.icono %>"></i> <%= evento.descripcion %></a>
           <% }) %>
         </nav>
 
         <% catEventos.forEach(evento=> { %>
-          <div id="<%= evento.descripcion_catevento.toLowerCase() %>" class="info-curso"> 
-            <% let eventosTemp = eventosDeCategorias.filter(evento1 => evento1.descripcion_catevento === evento.descripcion_catevento ) 
+          <div id="<%= evento.descripcion.toLowerCase() %>" class="info-curso"> 
+            <% let eventosTemp = eventosDeCategorias.filter(evento1 => evento1.descripcion === evento.descripcion ) 
             eventosTemp.forEach(element => { %>
               
               <div class="detalle-evento">
-                <h3><%= element.nombre_evento %></h3>
+                <h3><%= element.nombre %></h3>
                 <p><i class="far fa-clock"></i> <%= element.horaString %></p>
                 <p><i class="fa fa-calendar"></i> <%= element.fechaString %></p>
                 <p><i class="fa fa-user"></i> <%= element.invitado %></p>

@@ -1,6 +1,2 @@
 <%- include('./includes/index/programa.ejs') %>
 
-
-
-    <%- include('./includes/navegacion.ejs') %>
-  <%- include('./includes/invitados/invitado-lightbox.ejs') %>
