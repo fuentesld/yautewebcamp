@@ -16,11 +16,14 @@
   "author": "Luis Fuentes",
   "license": "MIT",
   "dependencies": {
+    "colors": "^1.4.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "moment": "^2.29.0",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.3.5"
+    "pg": "^8.4.1",
+    "sequelize": "^6.3.5",
+    "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
     "node-sass": "^4.14.1"

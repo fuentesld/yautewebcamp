@@ -2,7 +2,13 @@ const Invitados = require('../models/invitado')
 
 exports.getInvitadosPage = async (req,res)=>{
   try {
-    const [invitados, fieldData] = await Invitados.getAllInvitados()
+    
+    const resInvitados = await Invitados.getAllInvitados()
+    console.log(resInvitados.rows)
+    const invitados = resInvitados.rows
+
+    // console.log(invitados)
+
     res.render('invitados', {pageTitle: 'Invitados', invitados})
   } catch (error) {
     

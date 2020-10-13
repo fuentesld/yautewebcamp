@@ -2,6 +2,7 @@
   'use strict'
   document.addEventListener('DOMContentLoaded', function(){
 
+    // let forma = document.querySelector('#registro')
     let regalo = document.querySelector('#regalo')
     // ? Datos de usuario
     let nombre = document.querySelector('#nombre')
@@ -25,6 +26,10 @@
     let etiquetas = document.querySelector('#etiquetas')
 
     registro.disabled = true
+
+    // forma.submit(e => {
+      // e.preventDefault()
+    // })
 
     const calcularMontos = (e)=>{
       e.preventDefault()

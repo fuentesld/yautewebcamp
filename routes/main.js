@@ -12,6 +12,7 @@ router.get('/calendario', calendarioController.getCalendarioPage)
 router.get('/invitados', invitadosController.getInvitadosPage)
 router.get('/registro', registroController.getRegistroPage)
 router.post('/validar_registro', registroController.validarRegistro)
+router.get('/muestraregistro/:id', registroController.muestraRegistro)
 
 
 module.exports = router

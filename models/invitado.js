@@ -2,11 +2,11 @@ const db = require('../utils/database')
 
 module.exports = class Invitado {
   constructor(id, nombre, apellido, descripcion, urlImagen) {
-    this.id = id,
+    this.invitado_id = id,
     this.nombre = nombre,
     this.apellido = apellido,
     this.descripcion = descripcion,
-    this.urlImagen = urlImagen
+    this.url_imagen = urlImagen
   }
 
   save(){
@@ -15,9 +15,9 @@ module.exports = class Invitado {
 
   static getAllInvitados() {
     try {
-      return db.execute('SELECT * FROM invitados')
+      return db.query('SELECT * FROM invitados')
     } catch (error) {
-      console.log('ERROR en MODELO INVITADOS')
+      console.log('ERROR en MODELO INVITADOS getAllInvitados')
       console.log(error)
     }
 

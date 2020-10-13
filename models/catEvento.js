@@ -2,7 +2,7 @@ const db = require('../utils/database')
 
 module.exports = class catEvento {
   constructor(id, descripcion, icono) { 
-    this.id = id,
+    this.catevento_id = id,
     this.descripcion = descripcion,
     this.icono = icono
   }
@@ -13,9 +13,9 @@ module.exports = class catEvento {
 
   static getAllCatEventos(){
     try {
-      return db.execute('SELECT * FROM cat_eventos order BY id_catevento')
+      return db.query('SELECT * FROM cat_eventos ORDER BY catevento_id')
     } catch (error) {
-      console.log('ERROR en MODELO INVITADOS')
+      console.log('ERROR en MODELO CatEventos')
       console.log(error)
     }
   }

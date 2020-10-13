@@ -1,20 +1,6 @@
-<% let ultimaFecha = ""
-        eventos.forEach(evento => { 
-          const nombreCompleto = `${evento.invitado.nombre} ${evento.invitado.apellido}` 
-          if (evento.fecha !== ultimaFecha){ 
-            ultimaFecha = evento.fecha
-      %>
+<%- include('./includes/index/programa.ejs') %>
 
-            <h3>
-              <i class = "fa fa-calendar"></i> <%= evento.fecha  %>
-            </h3>
 
-          <% }%>
 
-        <%= evento.cat_evento.descripcion %>
-        <%= evento.hora %>
-        <%= evento.nombre %>
-        <%= nombreCompleto %>
-        
-        <br>
-      <% }) %></br>
+    <%- include('./includes/navegacion.ejs') %>
+  <%- include('./includes/invitados/invitado-lightbox.ejs') %>
