@@ -1,2 +1,51 @@
 <%- include('./includes/index/programa.ejs') %>
 
+America/Mexico_City
+
+CREATE TABLE public.registros
+(
+    registro_id serial PRIMARY_KEY,
+    nombre character varying(50)[] NOT NULL,
+    apellido character varying(50)[] NOT NULL,
+    email character varying(50)[] NOT NULL,
+    fecha timestamp with time zone GENERATED ALWAYS AS (to_timestamp(${Date.now()} / 1000.0)) STORED,
+    compra json NOT NULL,
+    total character varying(50)[] NOT NULL,
+    PRIMARY KEY (registro_id)
+);
+
+DROP TABLE IF EXIST registros;
+CREATE TABLE public.registros
+(
+    registro_id serial PRIMARY_KEY,
+    nombre varchar(50),
+    apellido varchar(50),
+    email varchar(50),
+    fecha timestamp with time zone ,
+    compra json,
+    total varchar(50),
+    PRIMARY KEY (registro_id)
+);
+
+ALTER TABLE public.registros
+    OWNER to yauteweb;
+
+
+
+DROP TABLE IF EXISTS registros;
+CREATE TABLE public.registros
+(
+    registro_id serial PRIMARY KEY,
+    nombre varchar(50),
+    apellido varchar(50),
+    email varchar(50),
+    fecha timestamp with time zone ,
+    compra json,
+    total numeric(10,2)
+);
+
+ALTER TABLE public.registros
+    OWNER to yauteweb;
+
+
+INSERT INTO registros (nombre, apellido, email, fecha, compra, total) VALUES ('luis', 'fuentes', 'fuentesld@gmail.com','2020-10-14T17:40:24.113Z', '{"x":1}', '123.45')

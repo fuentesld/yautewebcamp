@@ -7,25 +7,25 @@
   <!-- * REGISTRO DE USUARIOS -->
   <section class="seccion contenedor">
     <h2>Resumen del Registro</h2>
-    <h3>Hola <%= datos.nombre_registrado %>:</h3>
-    <p>Gracias por registrarte a YauteWebCamp 2020, enviaremos un correo a <%= datos.email_registrado %> con la siguiente informacion para su validación.</p>
-    <p>Clave de Registro: <%= datos.id_registrado %></p>
-    <p>Nombre: <%= datos.nombre_registrado %>  <%= datos.apellido_registrado %></p>
-    <% if (datos.compra_registrado.undia) {%><p>Pase(s) un dia: <%= datos.compra_registrado.undia %></p>
+    <h3>Hola <%= datos.nombre %>:</h3>
+    <p>Gracias por registrarte a YauteWebCamp 2020, enviaremos un correo a <%= datos.email %> con la siguiente informacion para su validación.</p>
+    <p>Clave de Registro: <%= datos.registro_id %></p>
+    <p>Nombre: <%= datos.nombre %>  <%= datos.apellido %></p>
+    <% if (datos.compra.undia) {%><p>Pase(s) un dia: <%= datos.compra.undia %></p>
       <%}%>
-    <% if (datos.compra_registrado.dosDias > 0) {%><p>Pase(s) 2 dias: <%= datos.compra_registrado.dosDias %></p>
+    <% if (datos.compra.dosDias > 0) {%><p>Pase(s) 2 dias: <%= datos.compra.dosDias %></p>
       <%}%>
-    <% if (datos.compra_registrado.completo>0) {%><p>Pase(s) 3 dias: <%= datos.compra_registrado.completo %></p>
+    <% if (datos.compra.completo>0) {%><p>Pase(s) 3 dias: <%= datos.compra.completo %></p>
       <%}%>
 
-    <% if (datos.compra_registrado.camisas > 0) {%>
-      <p>Camisas conmemorativas YauteWebCamp2020: <%=datos.compra_registrado.camisas%></p>
+    <% if (datos.compra.camisas > 0) {%>
+      <p>Camisas conmemorativas YauteWebCamp2020: <%=datos.compra.camisas%></p>
     <%}%>
-    <% if (datos.compra_registrado.etiquetas > 0) {%>
-      <p>Etiquetas del evento (HTML, CSS, JavaScript, Chrome): <%=datos.compra_registrado.etiquetas%></p>
+    <% if (datos.compra.etiquetas > 0) {%>
+      <p>Etiquetas del evento (HTML, CSS, JavaScript, Chrome): <%=datos.compra.etiquetas%></p>
     <%}%>
 
-    <p>Total a Pagar: <%= datos.totalpagado_registrado%></p>
+    <p>Total a Pagar: <%= datos.total%></p>
   </section>
 
     <%- include('./includes/footer.ejs') %>

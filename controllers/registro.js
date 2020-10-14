@@ -1,6 +1,5 @@
 // const moment = require('moment')
 const Registro = require('../models/registro')
-
 exports.getRegistroPage = (req,res)=>{
   // res.sendFile(path.join(dirRoot, 'views', 'index.html'))
   res.render('registro', {pageTitle: 'Reservaciones'})
@@ -18,17 +17,14 @@ exports.validarRegistro = async (req,res,next)=>{
   parseInt(datos.pedido_etiquetas) > 0 && (compra.etiquetas = parseInt(datos.pedido_etiquetas))
   compra.registro = datos.registro
   compra.regalo = parseInt(datos.regalo)
-  console.log('compra->', compra)
 
-  let registro = new Registro(null, datos.nombre, datos.apellido, datos.email, new Date(), JSON.stringify(compra), Number(datos.total_pedido))
-
+  let registro = new Registro(null, datos.nombre, datos.apellido, datos.email, new Date().toISOString(), JSON.stringify(compra), Number(datos.total_pedido))
 
   try {
-
     results = await registro.save()
-
-    datos.id = results[0].insertId
-    // console.log(datos)
+    console.log(results)
+    datos.id = results.rows[0].registro_id
+    console.log(datos)
     
     // res.render('validarRegistro', {pageTitle:'Validar Registro', datosRegistro: datos})
     return res.redirect(`/muestraregistro/${datos.id}`)
@@ -43,8 +39,8 @@ exports.muestraRegistro = async (req,res,next)=>{
   const id = req.params.id
   
   try {
-    [rows] = await Registro.getRegistroById(id)
-    const datos = rows[0]
+    result = await Registro.getRegistroById(id)
+    const datos = result.rows[0]
     console.log(datos);
     return res.render('validarRegistro', {pageTitle:'Carrito Registro', datos})
   } catch (error) {
