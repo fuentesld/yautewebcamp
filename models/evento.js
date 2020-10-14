@@ -3,13 +3,13 @@ const db = require('../utils/database')
 
 module.exports = class Evento {
   constructor(id, nombre, fecha, hora, clave, catEventoId, invitadoId){
-    this.id = id,
+    this.evento_id = id,
     this.nombre = nombre,
     this.fecha = fecha,
     this.hora = hora,
     this.clave = clave,
-    this.catEventoId = catEventoId,
-    this.invitadoId = invitadoId
+    this.catEvento_id = catEventoId,
+    this.invitado_id = invitadoId
   }
 
   save() {
@@ -17,9 +17,9 @@ module.exports = class Evento {
   }
 
   static getEventosParaCalendario(){
-    const query = 'SELECT fecha_evento, hora_evento, nombre_evento, descripcion_catevento, icono_catevento, CONCAT(nombre_invitado , " " , apellido_invitado) AS invitado FROM eventos INNER JOIN cat_eventos ON catevento_id = id_catevento INNER JOIN invitados ON invitado_id = id_invitado ORDER BY fecha_evento, catevento_id, hora_evento'
+    const query = 'SELECT fecha, hora, eventos.nombre, cat_eventos.descripcion, icono, invitados.nombre || \' \' || invitados.apellido AS invitado FROM eventos INNER JOIN cat_eventos ON cat_eventos.catevento_id = eventos.catevento_id INNER JOIN invitados ON (eventos.invitado_id = invitados.invitado_id) ORDER BY fecha, eventos.catevento_id, hora'
     try {
-      return db.execute(query)
+      return db.query(query)
     } catch (error) {
       console.log(error)
     }

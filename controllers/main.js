@@ -6,8 +6,9 @@ const Evento = require('../models/Evento')
 const Invitados = require('../models/invitado')
 
 exports.getMainPage = async(req,res)=>{
-  // res.sendFile(path.join(dirRoot, 'views', 'index.html'))
+  
   let eventosDeCategorias = []
+
   try {
     // Leemos invitados del evento
     const resInvitados = await Invitados.getAllInvitados()
@@ -17,12 +18,12 @@ exports.getMainPage = async(req,res)=>{
     const resCatEventos = await CatEvento.getAllCatEventos()
     const catEventos = resCatEventos.rows
 
-    // console.log(catEventos)
     // leemos dos eventos por cada categoria
     for (const categoria of catEventos){
       // leo eventos de una categoria en paso1
       const resRows = await Evento.getEventosPorCategoria(categoria.catevento_id, 2)
       const paso1 = resRows.rows
+
       // añado fecha y hora formateada
       paso2 = paso1.map(element =>{
         const element2 = {...element, fechaString: moment(element.fecha).add(4, 'years').format("dddd, Do MMMM YYYY"), horaString: moment(element.hora,'HH:mm:ss').format('h:mm a') }
@@ -30,24 +31,12 @@ exports.getMainPage = async(req,res)=>{
       })
       // Anadimos eventos de la categoria a arreglo para depliegue
       eventosDeCategorias = [...eventosDeCategorias, ...paso2]
-    // añadimos campos fechaString y horaString a las categorias
-
-    //   eventosDeCategorias =  [
-    //     ...eventosDeCategorias, 
-    //     ...rows.map(
-    //       element => ({ 
-    //         ...element, 
-    //         fechaString: moment(element.fecha_evento).add(4, 'years').format("dddd, Do MMMM YYYY"), 
-    //         horaString: moment(element.hora_evento,'HH:mm:ss').format('h:mm a')
-    //       })
-    //     )
-    //   ]
     }
-    // console.log(eventosDeCategorias)
-// return
-    res.render('index', {pageTitle: 'YateWebCamp', invitados, catEventos, eventosDeCategorias})
-  } catch (error) {
     
+    res.render('index', {pageTitle: 'YateWebCamp', invitados, catEventos, eventosDeCategorias})
+    // res.sendFile(path.join(dirRoot, 'views', 'index.html'))
+  } catch (error) {
+    console.log(error)
   }
 }
 

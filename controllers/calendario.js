@@ -5,15 +5,16 @@ moment.locale('es')
 exports.getCalendarioPage = async(req,res)=>{
   
   try {
-    [rows, fieldData] = await Evento.getEventosParaCalendario()
-
+    const eventoRows = await Evento.getEventosParaCalendario()
+    const rows = eventoRows.rows
+    
     const eventosArray = rows.map((element) => {
       return {
         ...element, 
-        fechaString: moment(element.fecha_evento).add(4, 'years').format("dddd, Do MMMM YYYY"), 
-        horaString: moment(element.hora_evento,'HH:mm:ss').format('h:mm a')
+        fechaString: moment(element.fecha).add(4, 'years').format("dddd, Do MMMM YYYY"), 
+        horaString: moment(element.hora,'HH:mm:ss').format('h:mm a')
       }
-    });
+    })
 
     const eventos={}
     let fechaActual = ''
@@ -25,16 +26,9 @@ exports.getCalendarioPage = async(req,res)=>{
       }
       eventos[`${fechaActual}`].push(evento)
     })
-    
-    // Object.entries(eventos).forEach(evento => {
-    //   const [fecha, actividad] = evento
-    //   console.log('******')
-    //   actividad.forEach(element => {
-    //     console.log(element.nombre)
-    //   });
-    // });
 
-    // return  eventos
+    console.log(eventos)
+    
     res.render('calendario', {pageTitle: 'Calendario', eventos})
   } catch (error) {
     console.log(error)
