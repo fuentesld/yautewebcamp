@@ -22,9 +22,9 @@ exports.validarRegistro = async (req,res,next)=>{
 
   try {
     results = await registro.save()
-    console.log(results)
+    // console.log(results)
     datos.id = results.rows[0].registro_id
-    console.log(datos)
+    // console.log(datos)
     
     // res.render('validarRegistro', {pageTitle:'Validar Registro', datosRegistro: datos})
     return res.redirect(`/muestraregistro/${datos.id}`)
@@ -41,7 +41,7 @@ exports.muestraRegistro = async (req,res,next)=>{
   try {
     result = await Registro.getRegistroById(id)
     const datos = result.rows[0]
-    console.log(datos);
+    // console.log(datos);
     return res.render('validarRegistro', {pageTitle:'Carrito Registro', datos})
   } catch (error) {
     console.log(error)

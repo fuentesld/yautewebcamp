@@ -2,7 +2,7 @@ const moment = require('moment')
 moment.locale('es')
 
 const CatEvento = require('../models/catEvento')
-const Evento = require('../models/Evento')
+const Evento = require('../models/evento')
 const Invitados = require('../models/invitado')
 
 exports.getMainPage = async(req,res)=>{
